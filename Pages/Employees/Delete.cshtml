@@ -1,0 +1,20 @@
+﻿@page "{id}"
+@model EmployeeManagementRazor.Pages.Employees.DeleteModel
+@{
+    ViewData["Title"] = "Delete";
+    ViewData["ShowButtons"] = false;
+}
+
+<h1>Delete Confirmation</h1>
+<div class="alert alert-primary row col-sm-6 offset-3">
+    <div style="margin:auto">
+        <partial name="_DisplayEmployeePartial" model="Model.Employee" view-data="ViewData" />
+    </div>
+        <h5 style="margin:auto">Are you sure you want to delete employee : @Model.Employee.Name ?</h5>
+        <div style="margin:auto" class="mt-2">
+            <form method="post">
+                <button type="submit" class="btn btn-danger mr-2">Yes</button>
+                <a class="btn btn-primary" asp-page="/Employees/Index">No</a>
+            </form>
+        </div>
+</div>
